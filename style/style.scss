@@ -35,7 +35,7 @@ body{
   .nav-item {
     a {
       color: white;
-      background-color: #ffb400;
+      background-color: #2B2A2A;
       border-radius: 50%;
       height: 50px;
       width: 50px;
@@ -44,6 +44,7 @@ body{
       position: relative;
       
     }
+
     span{
       background-color: #ffb400;
       height: 50px;
@@ -64,7 +65,9 @@ body{
     opacity: 1;
     display: block;
   }
-
+  .hovBtn:hover{
+    background-color: $yellow !important;
+  }
   .homeBtn{
     width: 120px;
   }
@@ -83,6 +86,11 @@ body{
   }
   }
 }
+.activeBtn{
+  a{
+    background-color: $yellow !important;
+  }
+}
 
 .heroSection {
   position: relative;
@@ -94,7 +102,7 @@ body{
     .pictureBg {
       img {
         width: 85%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 100px);
         z-index: 2;
         position: relative;
         border-radius: 30px;
@@ -107,7 +115,7 @@ body{
 .personalDetail {
   h1 {
     position: relative;
-    color: $yellow;
+    // color: $yellow;
     font-family: $poppins;
     font-size: 51px;
     font-weight: 700;
@@ -123,9 +131,6 @@ body{
     }
   }
 
-  span {
-    color: white;
-  }
   p {
     color: white;
     font-size: 16px;
@@ -159,7 +164,7 @@ body{
   &::before {
     content: "";
     position: absolute;
-    padding: 29px;
+    padding: 30px;
     background-color: $yellow;
     bottom: 0px;
     right: 0;
@@ -184,6 +189,64 @@ body{
   }
 }
 
+
+//home page responsive starts
+
+@media screen and (max-width:1200px) {
+  .navBar{
+    top: 86%;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: #252525;
+    height: 14%;
+  }
+
+  .heroSection::before {
+    display: none;
+  }
+  .heroFlex{
+    text-align: center;
+    padding: 5% 0;
+  }
+  .heroSection .heroFlex .pictureBg img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+   border:  4px solid #646464;
+  }
+  .personalDetail h1::before{
+    display: none;
+  }
+  .navBar .nav-item a{
+    background-color: #444;
+  }
+}
+
+@media screen and (max-width:576px){
+  .personalDetail h1{
+    font-size: 30px;
+    padding-left: 0;
+  }
+  .personalDetail{
+    margin-bottom: 20px;
+  }
+  .heroFlex{
+    flex-direction: column;
+
+  }
+  .more{
+    display: none;
+  }
+}
+
+
+
+
+
+
+//home page responsive Ends
+
 .heading{
   padding: 70px 0px;
   font-family: $poppins;
@@ -200,21 +263,48 @@ body{
   opacity: 0.2;
   font-size: 110px;
   position: absolute;
-  top: 25px;
-  left: 30%;
+  top: 43%;
+  left: 50%;
   z-index: -1;
   line-height: 16px;
   font-weight: 800;
+  transform: translateY(-50%);
+  transform: translatex(-50%);
   font-family: $poppins;
 }
+//about responsive starts here
+
+@media screen and (max-width:998px){
+  .mainContent .numbers{
+    margin-top: 68px;
+  }
+  .experiences .expIcon::before{
+    left: -11% !important;
+  } 
+}
+@media screen and (max-width:768px){
+  .experiences .expIcon::before{
+    left: 11% !important;
+  }
+  .experienceWrapper .fa-solid {
+    left: 29% !important;
+
+  }
+}
+
+
+//about responsive ends here
 .workHeading::before{
   content: "WORKS";
   font-size: 126px;
   left: 28%;
+  transform: translateY(-50%);
+
 }
 .contactHeading::before{
   content: "CONTACT";
   font-size: 126px;
+  transform: translateY(-50%);
   left: 21%;
 }
 
@@ -222,6 +312,7 @@ body{
   content: "POSTS";
   font-size: 126px;
   left: 32%;
+  transform: translateY(-50%);
 }
 .bigTitle{
   position: relative;
@@ -503,7 +594,7 @@ body{
 .socialIcons{
   width: 200px !important;
   .icons{
-  font-size: 22px;
+  font-size: 17px;
   position: relative;
   color: $white;
   &::after{
@@ -511,8 +602,8 @@ body{
     position: absolute;
     width: 38px;
     height: 37px;
-    left: -7px;
-    top: -7px;
+    left: -10px;
+    top: -10px;
     border-radius: 50%;
     z-index: -1;
     background-color: #252525;
@@ -523,8 +614,31 @@ body{
 }
 }
 .fb::after{
-  left: -12px !important;
+  left: -13px !important;
 }
+// contacts Responsive starts here
+@media screen and (max-width:998px){
+
+
+  .contactDetails .detailBox .details {
+    position: absolute;
+    right: 0 !important;
+  }
+  .contactDetails .detailBox{
+    left: -9px;
+  }
+  .contactHeading::before{
+    font-size: 80px;
+    left: 25%;
+    top: 50%;
+  }
+  .contactHeading{
+    font-size: 40px;
+  }
+}
+
+
+// contacts Responsive ends here
 .blogsWrapper{
   .row{
     color:$black;
@@ -552,3 +666,19 @@ body{
     }
   }
 }
+
+// blog responsive starts here
+@media screen and (max-width:998px){
+  .blogHeading::before{
+    font-size: 80px;
+    left: 32%;
+    top: 50%;
+  }
+  .blogHeading{
+    font-size: 40px;
+  }
+}
+
+
+
+// blog responsive ends here
